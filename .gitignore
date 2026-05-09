@@ -4,3 +4,5 @@ node_modules/
 dist/
 build/
 *.log
+test_requests.http
+school_management_api.postman_collection.json

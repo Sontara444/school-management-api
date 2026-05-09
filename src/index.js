@@ -10,7 +10,9 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Basic Route
+// Routes
+app.use('/api', require('./routes/schoolRoutes'));
+
 app.get('/', (req, res) => {
     res.send('School Management API is running.');
 });
