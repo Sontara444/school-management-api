@@ -24,8 +24,13 @@ USE school_management;
 ```
 
 ### 2. Environment Variables
-Create a `.env` file in the `server` directory (or update the existing one) with your MySQL credentials:
+Create a `.env` file in the `server` directory by copying `.env.example` and updating it with your MySQL credentials:
 
+```bash
+cp .env.example .env
+```
+
+Or manually create `.env` with:
 ```env
 PORT=3000
 DB_HOST=localhost
@@ -33,6 +38,7 @@ DB_USER=root
 DB_PASSWORD=your_password
 DB_NAME=school_management
 ```
+
 
 ### 3. Installation
 ```bash
@@ -49,11 +55,21 @@ npm run dev
 npm start
 ```
 
-## API Documentation
-You can import the provided [Postman Collection](school_management_api.postman_collection.json) into Postman to test the endpoints.
+## API Documentation & Testing
 
-- **POST** `/api/addSchool`: Add a new school.
-- **GET** `/api/listSchools?latitude=XXX&longitude=YYY`: List schools sorted by distance.
+A comprehensive **Postman Collection** has been created to facilitate testing and documentation for stakeholders.
+
+### Postman Collection Features:
+- **Comprehensive Coverage**: Includes requests for both `Add School` and `List Schools` APIs.
+- **Example Requests**: Each request comes with pre-configured sample data and headers.
+- **Documented Responses**: Includes saved examples of expected responses (Success/Error) for clear reference.
+- **Easy Sharing**: The collection file is included in the root directory for stakeholders to import and test immediately.
+
+### How to Test:
+1. Import `school_management_api.postman_collection.json` into Postman.
+2. Use the **Add School** request to populate the database.
+3. Use the **List Schools** request (with `latitude` and `longitude` params) to verify the proximity sorting.
+
 
 ## Project Structure
 - `src/config/`: Database connection and schema.
